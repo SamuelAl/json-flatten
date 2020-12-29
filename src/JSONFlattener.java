@@ -8,30 +8,33 @@ import java.util.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-
-
 public class JSONFlattener {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException {
-		Path fileName = Path.of("example.json");
-		String content = Files.readString(fileName);
-		System.out.println(content);
 		
-		ObjectMapper mapper = new ObjectMapper();
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		try {
-			map = (Map<String, Object>) mapper.readValue(content, map.getClass());
-			String json = generateJSON(map);
-			System.out.println(json);
+		if (args.length == 1) {
+			Path fileName = Path.of(args[0]);
+			String content = Files.readString(fileName);
+			System.out.println(content);
 			
-			Path output = Paths.get("output.json");
-			Files.write(output, json.getBytes());
+			ObjectMapper mapper = new ObjectMapper();
+			Map<String, Object> map = new HashMap<String, Object>();
+			
+			try {
+				map = (Map<String, Object>) mapper.readValue(content, map.getClass());
+				String json = generateJSON(map);
+				System.out.println(json);
+				
+				Path output = Paths.get("output.json");
+				Files.write(output, json.getBytes());
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+		
 	}
 	
 	@SuppressWarnings("unchecked")
