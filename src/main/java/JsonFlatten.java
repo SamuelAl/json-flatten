@@ -45,9 +45,10 @@ public class JsonFlatten {
 	 * @return result : String read from scanner, or "" if no content
 	 */
 	private static String readIn(Scanner scanner) {
-		if (!scanner.hasNextLine())
+		if (!scanner.hasNextLine()) {
 			return "";
-
+		}
+			
 		String result = scanner.useDelimiter(Pattern.compile("\\A")).next();
 		return result;
 	}
