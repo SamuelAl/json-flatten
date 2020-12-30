@@ -17,7 +17,7 @@ public class JsonFlatten {
 		
 			try {
 				content = Files.readString(fileName);
-				String json = JsonFlattener.flattenJSON(content);
+				String json = JsonFlattener.flattenJson(content);
 
 				Path output = Paths.get("output.json");
 				Files.write(output, json.getBytes());
@@ -32,7 +32,7 @@ public class JsonFlatten {
 			Scanner stdin = new Scanner(System.in);
 			content = readIn(stdin);
 
-			String json = JsonFlattener.flattenJSON(content);
+			String json = JsonFlattener.flattenJson(content);
 			System.out.print(json);
 		}
 
