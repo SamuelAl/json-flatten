@@ -19,7 +19,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>JSONFlattener</mainClass>
+                  <mainClass>JsonFlatten</mainClass>
                 </transformer>
               </transformers>
             </configuration>

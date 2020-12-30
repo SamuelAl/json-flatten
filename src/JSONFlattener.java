@@ -1,58 +1,33 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-public class JSONFlattener {
+public class JsonFlattener {
 
 	@SuppressWarnings("unchecked")
-	public static void main(String[] args) throws IOException {
+	public static String flattenJSON(String json) {
+		ObjectMapper mapper = new ObjectMapper();
+		Map<String, Object> map = new HashMap<String, Object>();
+		String flatJSON = "";
 		
-		if (args.length == 1) {
-			Path fileName = Path.of(args[0]);
-			String content = Files.readString(fileName);
-			System.out.println(content);
-			
-			ObjectMapper mapper = new ObjectMapper();
-			Map<String, Object> map = new HashMap<String, Object>();
-			
-			try {
-				map = (Map<String, Object>) mapper.readValue(content, map.getClass());
-				String json = generateJSON(map);
-				System.out.println(json);
-				
-				Path output = Paths.get("output.json");
-				Files.write(output, json.getBytes());
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
+		try {
+			map = (Map<String, Object>) mapper.readValue(json, map.getClass());
+			flatJSON = generateJSON(map);
+		} 
+		catch (JsonMappingException e) {
+			e.printStackTrace();
+		} 
+		catch (JsonProcessingException e) {
+			e.printStackTrace();
 		}
 		
-		
+		return flatJSON;
 	}
 	
-	@SuppressWarnings("unchecked")
-	private static void printKeys(Map<String, Object> map, Deque<String> path) {
-		for (String key : map.keySet()) {
-			path.push(key);
-			Object value = map.get(key);
-			if (value instanceof Map) {
-				printKeys((Map<String, Object>) value, path);
-			}
-			else {
-				System.out.printf("%s: %s\n", String.join(".", path), value);
-			}
-			path.pop();
-		}
-	}
-	
-	private static String generateJSON(Map<String, Object> map) {
+	public static String generateJSON(Map<String, Object> map) {
 		StringBuilder json = new StringBuilder();
 		// Append opening bracket
 		json.append("{\n");

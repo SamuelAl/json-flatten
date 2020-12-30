@@ -29,7 +29,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>JSONFlattener</mainClass>
+									<mainClass>JsonFlatten</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
