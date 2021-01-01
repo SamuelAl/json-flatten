@@ -26,6 +26,8 @@ mvn test
 
 The tests obtain input and expected output from the corresponding test .txt files in /src/test/resources.
 
+Some of the tests are meant to test the program when invalid JSON is fed as input. The program will inform the user of the error in the JSON file when possible. During the testing some of the messages will be displayed on the terminal to showcase this feature.
+
 ## Usage
 The exported jar package is included in the /target folder. The program offers various options to run it.
 1. __Take .json file as input parameter:__ Accepts name of json file as first parameter of program. Please place .json file on same directory as jar file. Resulting flattened JSON object will be generated as a new JSON file called output.json that will be stored on the same directory.
