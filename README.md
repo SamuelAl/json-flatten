@@ -1,4 +1,4 @@
-# MongoDB Challenge: JSON Flatten
+# JSON Flatten
 
 ## Introduction
 Project files for the assigned MongoDB Challenge: a program that takes a JSON object as input and outputs a flattened version of the JSON object, with keys as the path to every terminal value in the JSON structure. My solution has been implemented in Java (JDK 11) using Maven for dependency management.
