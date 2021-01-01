@@ -6,7 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Samuel Alarco Cantos
- *
+ * @version 0.0.1
+ * @since 01/01/2021
  */
 public class JsonFlattener {
 	
