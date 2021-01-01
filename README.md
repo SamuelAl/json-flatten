@@ -6,6 +6,8 @@ Project files for the assigned MongoDB Challenge: a program that takes a JSON ob
 ## Build
 The project is build using Maven to manage dependencies. In order to build the project on your machine please make sure you have Maven properly installed, together with JDK 11 or later version.
 
+Before running any Maven commands, I recommend running __mvn clean__ or __mvn clean install__ to clean any previously compiled project code and avoid errors on some systems.
+
 Open a terminal window on the root directory and run the following command:
 
 ```
@@ -14,6 +16,8 @@ mvn package
 The resulting jar file will be store in the /target folder.
 
 ## Running Tests
+Before running any Maven commands, I recommend running __mvn clean__ or __mvn clean install__ to clean any previously compiled project code and avoid errors on some systems.
+
 This project has JUnit tests to test the main utility class JsonFlattener, which contains the functionality to flatten the JSON objects. Tests can be run automatically using the command
 
 ```
