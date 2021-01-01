@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author Samuel Alarco Cantos
- * @version 1.0.0
+ * @version 0.0.1
  * @since 01/01/2021
  *
  */
