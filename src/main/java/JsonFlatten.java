@@ -5,6 +5,12 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * @author Samuel Alarco Cantos
+ * @version 1.0.0
+ * @since 01/01/2021
+ *
+ */
 public class JsonFlatten {
 
 	public static void main(String[] args) {

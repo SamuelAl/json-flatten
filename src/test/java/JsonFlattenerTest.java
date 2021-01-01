@@ -1,20 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.Normalizer;
-import java.util.Arrays;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-/**
- * 
- */
 
 /**
  * @author Samuel Alarco Cantos
@@ -22,13 +10,13 @@ import org.junit.jupiter.api.Test;
  */
 class JsonFlattenerTest {
 
-	
-	
 	@Test
 	void flattenJsonTest() {
 		
 		String jsonFile, jsonOutput;
 		try {
+			// Test inputs and expected outputs are loaded from 
+			// corresponding text files
 			Path inputFile = Paths.get(ClassLoader.getSystemResource("test_input.txt").toURI());
 			Path expextedResultsFile = Paths.get(ClassLoader.getSystemResource("test_output.txt").toURI());
 			jsonFile = Files.readString(inputFile);
@@ -43,10 +31,8 @@ class JsonFlattenerTest {
 				assertEquals(expected, output);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 	}
 	

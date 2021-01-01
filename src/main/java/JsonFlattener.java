@@ -1,12 +1,13 @@
 import java.util.*;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+/**
+ * @author Samuel Alarco Cantos
+ *
+ */
 public class JsonFlattener {
 	
 	/*
@@ -20,6 +21,7 @@ public class JsonFlattener {
 	@SuppressWarnings("unchecked")
 	public static String flattenJson(String json) {
 		ObjectMapper mapper = new ObjectMapper();
+		// LinkedHashMap implementation used to maintain input order
 		Map<String, Object> map = new LinkedHashMap<String, Object>();
 		String flatJSON = "";
 		
