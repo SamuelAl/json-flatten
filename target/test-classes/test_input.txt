@@ -1,0 +1,95 @@
+{
+    "a": 1,
+    "b": true,
+    "c": {
+        "d": 3,
+        "e": "test"
+    }
+}
+===
+{
+	"a": "Samuel"
+}
+===
+{
+	"a": {
+		"b": {
+			"c": {
+				"d": "Samuel"
+			}
+		}
+	}
+}
+===
+{
+	"name": "Samuel",
+	"surname": "Alarco Cantos",
+	"age": 20,
+	"student": true,
+	"address": {
+		"city": "Dublin",
+		"street": "St. Stephen's Rd",
+		"country": "Ireland"
+	},
+	"height": 1.72
+}
+===
+{
+	"bool": true,
+	"int": 1,
+	"float": 3.524,
+	"l1": {
+		"one": "String",
+		"another": "name",
+		"l2": {
+			"int": 2,
+			"float": 3.1415,
+			"bool": false
+		}
+	}
+}
+===
+{
+	"bool": true,
+	"int": 1,
+	"float": 3.524
+	"l1": {
+		"one": "String",
+		"another": "name",
+		"l2": {
+			"int": 2,
+			"float": 3.1415,
+			"bool": false
+		}
+	}
+}
+===
+{
+	"bool": true,
+	"int":,
+	"float": 3.524
+	"l1": {
+		"one": "String",
+		"another": "name",
+		"l2": {
+			"int": 2,
+			"float": 3.1415,
+			"bool": false
+		}
+	}
+}
+===
+{
+	"bool": true,
+	"int": 3,
+	"float": 3.524
+	"l1": {
+		"one": "String",
+		"another": "name",
+		"l2": {
+			"int": 2,
+			"float": 3.1415,
+			"bool": false
+		}
+	
+}

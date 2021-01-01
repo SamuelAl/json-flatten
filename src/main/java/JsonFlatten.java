@@ -34,6 +34,7 @@ public class JsonFlatten {
 
 			String json = JsonFlattener.flattenJson(content);
 			System.out.print(json);
+			stdin.close();
 		}
 
 	}

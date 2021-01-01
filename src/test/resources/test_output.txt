@@ -1,0 +1,41 @@
+{
+	"a": 1,
+	"b": true,
+	"c.d": 3,
+	"c.e": "test"
+}
+===
+{
+	"a": "Samuel"
+}
+===
+{
+	"a.b.c.d": "Samuel"
+}
+===
+{
+	"name": "Samuel",
+	"surname": "Alarco Cantos",
+	"age": 20,
+	"student": true,
+	"address.city": "Dublin",
+	"address.street": "St. Stephen's Rd",
+	"address.country": "Ireland",
+	"height": 1.72
+}
+===
+{
+	"bool": true,
+	"int": 1,
+	"float": 3.524,
+	"l1.one": "String",
+	"l1.another": "name",
+	"l1.l2.int": 2,
+	"l1.l2.float": 3.1415,
+	"l1.l2.bool": false
+}
+===
+===
+===
+===
+===

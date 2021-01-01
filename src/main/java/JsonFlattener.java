@@ -1,5 +1,7 @@
 import java.util.*;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,13 +20,16 @@ public class JsonFlattener {
 	@SuppressWarnings("unchecked")
 	public static String flattenJson(String json) {
 		ObjectMapper mapper = new ObjectMapper();
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
 		String flatJSON = "";
 		
 		try {
 			map = (Map<String, Object>) mapper.readValue(json, map.getClass());
 			flatJSON = mapToFlatJson(map);
 		} 
+		catch(JsonParseException e) {
+			System.err.println(e.getMessage());
+		}
 		catch (JsonMappingException e) {
 			e.printStackTrace();
 		} 
@@ -66,7 +71,7 @@ public class JsonFlattener {
 	@SuppressWarnings("unchecked")
 	private static void mapToFlatJsonHelper(Map<String, Object> map, Deque<String> path, StringBuilder sb) {
 		for (String key : map.keySet()) {
-			path.push(key);
+			path.add(key);
 			Object value = map.get(key);
 			if (value instanceof Map) {
 				mapToFlatJsonHelper((Map<String, Object>) value, path, sb);
@@ -80,7 +85,7 @@ public class JsonFlattener {
 					sb.append(String.format("%s,\n", value));
 				}
 			}
-			path.pop();
+			path.pollLast();
 		}
 	}
 	
