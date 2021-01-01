@@ -44,7 +44,7 @@ This project makes use of the Jackson JSON library for Java to deserialize the J
 The project was written entirely in Java using the Eclipse IDE and Maven to manage dependencies.
 
 ## Requirements
-Please download and install the latest Java SRE or JDK in order to use this program. In order to build or test the program, please download the Java JDK 11 or latest version.
+Please download and install the latest Java SE (11 or above) or JDK in order to use this program. In order to build or test the program, please download the Java JDK 11 or latest version.
 
 ## Credit
 Author: Samuel Alarco Cantos
