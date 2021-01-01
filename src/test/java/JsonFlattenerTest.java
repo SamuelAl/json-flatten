@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 /**
  * @author Samuel Alarco Cantos
+ * @version 0.0.1
+ * @since 01/01/2021
  *
  */
 class JsonFlattenerTest {
