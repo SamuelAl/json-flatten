@@ -4,7 +4,7 @@
 Project files for the assigned MongoDB Challenge: a program that takes a JSON object as input and outputs a flattened version of the JSON object, with keys as the path to every terminal value in the JSON structure. My solution has been implemented in Java (JDK 11) using Maven for dependency management.
 
 ## Build
-The project is build using Maven to manage dependencies. In order to build the project on your machine please make sure you have Maven properly installed, together with JDK 11.
+The project is build using Maven to manage dependencies. In order to build the project on your machine please make sure you have Maven properly installed, together with JDK 11 or later version.
 
 Open a terminal window on the root directory and run the following command:
 
